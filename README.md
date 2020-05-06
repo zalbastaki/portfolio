@@ -1,11 +1,6 @@
-# Vue Starter
+# Portfolio
 
-This is a vue starter template. Ready for use with:
-- Netlify forms
-- Netlify CMS
-- Google fonts
-- Fontawesome
-- Media queries plugin
+This is my portfolio website.
 
 ## Project setup
 ```
