@@ -1,6 +1,9 @@
 <template>
     <div>
-
+        <home :data="data" />
+        <about :data="data" />
+        <work :data="data" />
+        <contact :data="data" />
     </div>
 </template>
 
