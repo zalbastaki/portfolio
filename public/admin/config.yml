@@ -2,8 +2,8 @@ backend:
     name: git-gateway
     branch: master
 
-media_folder: "src/assets/images/uploads"
-public_folder: "/images/uploads"
+media_folder: "src/assets/uploads"
+public_folder: "/uploads"
 
 collections:
     - name: "pages"
@@ -12,9 +12,59 @@ collections:
       editor:
         preview: false
       files:
+        - name: "general"
+          label: "General Information"
+          file: "src/content/general.md"
+          delete: false
+          fields:
+            - {label: "Logo", name: "logo", widget: "image"}
+            - {label: "Email", name: "email", widget: "string"}
+            - {label: "LinkedIn", name: "linkedin", widget: "string"}
+            - {label: "Github", name: "github", widget: "string"}
+            - {label: "Resume", name: "resume", widget: "file"}
         - name: "home"
           label: "Home Page"
           file: "src/content/home.md"
           delete: false
           fields:
-            - {label: "Title", name: "title", widget: "string"}
+            - label: "Home section"
+              name: "home"
+              widget: "object"
+              fields:
+                - {label: "Title", name: "title", widget: "string"}
+                - {label: "Subtitle", name: "subtitle", widget: "string"}
+                - {label: "Image", name: "image", widget: "image"}
+            - label: "About section"
+              name: "about"
+              widget: "object"
+              fields:
+                - {label: "Title", name: "title", widget: "string"}
+                - {label: "Content", name: "content", widget: "markdown"}
+                - {label: "Resume", name: "resume", widget: "file"}
+                - label: "Skills"
+                  name: "skills"
+                  label_singular: "Skill"
+                  widget: "list"
+                  fields:
+                    - {label: "Name", name: "name", widget: "string"}
+                    - {label: "Proficiency Level", name: "proficiency", widget: "number", min: 0, max: 1, step: 0.1, hint: "Number between 0 and 1."}
+            - label: "Work section"
+              name: "work"
+              widget: "object"
+              fields:
+                - {label: "Title", name: "title", widget: "string"}
+                - label: "Projects"
+                  name: "projects"
+                  label_singular: "Project"
+                  widget: "list"
+                  fields:
+                    - {label: "Name", name: "name", widget: "string"}
+                    - {label: "Description", name: "description", widget: "text"}
+                    - {label: "Source Link", name: "source", widget: "string", required: false}
+                    - {label: "Project Link", name: "project", widget: "string", required: false}
+                    - {label: "Preview", name: "preview", widget: "file"}
+            - label: "Contact section"
+              name: "contact"
+              widget: "object"
+              fields:
+                - {label: "Title", name: "title", widget: "string"}

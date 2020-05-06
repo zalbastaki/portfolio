@@ -9,3 +9,11 @@
         name: 'default',
     };
 </script>
+
+<style lang="scss">
+    body {
+        background-color: $background-color;
+        font-family: $primary-font;
+        color: $secondary-color;
+    }
+</style>
