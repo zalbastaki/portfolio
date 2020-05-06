@@ -1,11 +1,11 @@
 <template>
-    
+    <nav> </nav>
 </template>
 
 <script>
-    import dataLoader from '../mixins/dataLoader';
-    import data from '../content/general.md';
-    
+    import dataLoader from '../../mixins/dataLoader';
+    import data from '../../content/general.md';
+
     export default {
         name: 'main-nav',
 
@@ -13,6 +13,4 @@
     };
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

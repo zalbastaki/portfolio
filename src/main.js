@@ -3,6 +3,9 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 
+import upperFirst from 'lodash.upperfirst';
+import camelCase from 'lodash.camelcase';
+
 import VueMq from 'vue-mq';
 import icons from './plugins/icons';
 

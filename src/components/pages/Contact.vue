@@ -1,7 +1,5 @@
 <template>
-    <div id="contact">
-
-    </div>
+    <div id="contact"> </div>
 </template>
 
 <script>
@@ -17,6 +15,4 @@
     };
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
