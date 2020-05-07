@@ -1,6 +1,6 @@
 <template>
     <nav id="main-nav" :class="$mq">
-        <img :src="data.logo" alt="logo" />
+        <img id="logo" :src="data.logo" alt="logo" @click="goto('home')" />
 
         <ul id="menu">
             <li
@@ -38,7 +38,7 @@
                 </a>
             </li>
             <li class="social-item" :class="$mq">
-                <a :href="data.resume" target="_blank" rel="noopener">
+                <a href="/assets/resume.pdf" target="_blank" rel="noopener">
                     <fa-icon :icon="['fas', 'file']" aria-label="resume" />
                 </a>
             </li>
@@ -115,6 +115,11 @@
             width: 50px;
             padding: 15px 0;
         }
+    }
+
+    #logo {
+        width: 30px;
+        cursor: pointer;
     }
 
     #menu,

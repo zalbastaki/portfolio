@@ -25,8 +25,6 @@ about:
       proficiency: 50
     - name: Adobe XD
       proficiency: 65
-  resume:
-    - https://res.cloudinary.com/zalbastaki/image/upload/v1588861636/OldZainAlbastakiCV.pdf
   title: About Me.
   content: >-
     Contrary to popular belief, Lorem Ipsum is not simply random text. It  has

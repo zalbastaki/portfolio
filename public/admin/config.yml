@@ -25,7 +25,6 @@ collections:
             - {label: "Email", name: "email", widget: "string"}
             - {label: "LinkedIn", name: "linkedin", widget: "string"}
             - {label: "Github", name: "github", widget: "string"}
-            - {label: "Resume", name: "resume", widget: "file"}
         - name: "home"
           label: "Home Page"
           file: "src/content/home.md"
@@ -44,7 +43,6 @@ collections:
               fields:
                 - {label: "Title", name: "title", widget: "string"}
                 - {label: "Content", name: "content", widget: "markdown"}
-                - {label: "Resume", name: "resume", widget: "file"}
                 - label: "Skills"
                   name: "skills"
                   label_singular: "Skill"
