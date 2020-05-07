@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import Home from '../views/Home.vue';
+import Homepage from '../views/Homepage.vue';
 // Import new pages here
 import PageNotFound from '../views/PageNotFound.vue';
 
@@ -10,8 +10,8 @@ Vue.use(VueRouter);
 const routes = [
     {
         path: '/',
-        name: 'home',
-        component: Home,
+        name: 'homepage',
+        component: Homepage,
     },
     // Add new routes here
     {

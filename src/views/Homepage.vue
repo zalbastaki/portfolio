@@ -1,9 +1,9 @@
 <template>
     <div>
-        <home :data="data" />
-        <about :data="data" />
-        <work :data="data" />
-        <contact :data="data" />
+        <home :data="data" class="page" />
+        <about :data="data" class="page" />
+        <work :data="data" class="page" />
+        <contact :data="data" class="page" />
     </div>
 </template>
 
@@ -17,7 +17,7 @@
     import Contact from '../components/pages/Contact.vue';
 
     export default {
-        name: 'home',
+        name: 'homepage',
 
         mixins: [dataLoader(data)],
 
@@ -29,3 +29,9 @@
         },
     };
 </script>
+
+<style lang="scss" scoped>
+    .page {
+        height: 100vh;
+    }
+</style>

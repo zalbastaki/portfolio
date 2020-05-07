@@ -7,8 +7,8 @@
 </template>
 
 <script>
-    import MainNav from './components/main/MainNav';
-    import MainFooter from './components/main/MainFooter';
+    import MainNav from './components/main/MainNav.vue';
+    import MainFooter from './components/main/MainFooter.vue';
 
     export default {
         name: 'default',
