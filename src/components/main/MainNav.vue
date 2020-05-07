@@ -38,7 +38,7 @@
                 </a>
             </li>
             <li class="social-item" :class="$mq">
-                <a href="/assets/resume.pdf" target="_blank" rel="noopener">
+                <a href="/resume.pdf" target="_blank" rel="noopener">
                     <fa-icon :icon="['fas', 'file']" aria-label="resume" />
                 </a>
             </li>
