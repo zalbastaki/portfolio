@@ -26,47 +26,46 @@ collections:
             - {label: "LinkedIn", name: "linkedin", widget: "string"}
             - {label: "Github", name: "github", widget: "string"}
         - name: "home"
-          label: "Home Page"
+          label: "Home Section"
           file: "src/content/home.md"
           delete: false
           fields:
-            - label: "Home section"
-              name: "home"
-              widget: "object"
+            - {label: "Title", name: "title", widget: "string"}
+            - {label: "Subtitle", name: "subtitle", widget: "string"}
+            - {label: "Image", name: "image", widget: "image"}
+        - name: "about"
+          label: "About Section"
+          file: "src/content/about.md"
+          delete: false
+          fields:
+            - {label: "Title", name: "title", widget: "string"}
+            - {label: "Content", name: "content", widget: "markdown"}
+            - label: "Skills"
+              name: "skills"
+              label_singular: "Skill"
+              widget: "list"
               fields:
-                - {label: "Title", name: "title", widget: "string"}
-                - {label: "Subtitle", name: "subtitle", widget: "string"}
-                - {label: "Image", name: "image", widget: "image"}
-            - label: "About section"
-              name: "about"
-              widget: "object"
+                - {label: "Name", name: "name", widget: "string"}
+                - {label: "Proficiency Level", name: "proficiency", widget: "number", hint: "Number between 0 and 100."}
+        - name: "work"
+          label: "Work Section"
+          file: "src/content/work.md"
+          delete: false
+          fields:
+            - {label: "Title", name: "title", widget: "string"}
+            - label: "Projects"
+              name: "projects"
+              label_singular: "Project"
+              widget: "list"
               fields:
-                - {label: "Title", name: "title", widget: "string"}
-                - {label: "Content", name: "content", widget: "markdown"}
-                - label: "Skills"
-                  name: "skills"
-                  label_singular: "Skill"
-                  widget: "list"
-                  fields:
-                    - {label: "Name", name: "name", widget: "string"}
-                    - {label: "Proficiency Level", name: "proficiency", widget: "number", hint: "Number between 0 and 100."}
-            - label: "Work section"
-              name: "work"
-              widget: "object"
-              fields:
-                - {label: "Title", name: "title", widget: "string"}
-                - label: "Projects"
-                  name: "projects"
-                  label_singular: "Project"
-                  widget: "list"
-                  fields:
-                    - {label: "Name", name: "name", widget: "string"}
-                    - {label: "Description", name: "description", widget: "text"}
-                    - {label: "Source Link", name: "source", widget: "string", required: false}
-                    - {label: "Project Link", name: "project", widget: "string", required: false}
-                    - {label: "Preview", name: "preview", widget: "file"}
-            - label: "Contact section"
-              name: "contact"
-              widget: "object"
-              fields:
-                - {label: "Title", name: "title", widget: "string"}
+                - {label: "Name", name: "name", widget: "string"}
+                - {label: "Description", name: "description", widget: "text"}
+                - {label: "Source Link", name: "source", widget: "string", required: false}
+                - {label: "Project Link", name: "project", widget: "string", required: false}
+                - {label: "Preview", name: "preview", widget: "file"}
+        - name: "contact"
+          label: "Contact Section"
+          file: "src/content/contact.md"
+          delete: false
+          fields:
+            - {label: "Title", name: "title", widget: "string"}

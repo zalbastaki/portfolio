@@ -3,17 +3,14 @@
 </template>
 
 <script>
+    import dataLoader from '../../mixins/dataLoader';
+    import data from '../../content/about.md';
     import showdown from 'showdown';
 
     export default {
         name: 'about',
 
-        props: {
-            data: {
-                type: Object,
-                required: true,
-            },
-        },
+        mixins: [dataLoader(data)],
 
         methods: {
             makeHtml(content) {

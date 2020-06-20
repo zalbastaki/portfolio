@@ -23,7 +23,7 @@ module.exports = {
 
         plugins: [
             new GoogleFontsPlugin({
-                fonts: [{ family: 'Montserrat' }, { family: 'Tangerine' }],
+                fonts: [{ family: 'Montserrat' }, { family: 'Tangerine' }, { family: 'Crimson Text' }],
             }),
             new PrerenderSPAPlugin({
                 // Absolute path to compiled SPA

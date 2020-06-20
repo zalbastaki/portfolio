@@ -103,7 +103,7 @@
         left: 0;
         top: 0;
         bottom: 0;
-        width: 65px;
+        width: $nav-width;
         background-color: $tertiary-color;
         display: flex;
         flex-direction: column;
@@ -112,7 +112,7 @@
         padding: 30px 0;
 
         &.mobile {
-            width: 50px;
+            width: $nav-width-mobile;
             padding: 15px 0;
         }
     }

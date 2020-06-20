@@ -1,16 +1,13 @@
 <template>
     <div>
-        <home :data="data" class="page" />
-        <about :data="data" class="page" />
-        <work :data="data" class="page" />
-        <contact :data="data" class="page" />
+        <home class="page" :class="$mq" />
+        <about class="page" :class="$mq" />
+        <work class="page" :class="$mq" />
+        <contact class="page" :class="$mq" />
     </div>
 </template>
 
 <script>
-    import dataLoader from '../mixins/dataLoader';
-    import data from '../content/home.md';
-
     import Home from '../components/pages/Home.vue';
     import About from '../components/pages/About.vue';
     import Work from '../components/pages/Work.vue';
@@ -18,8 +15,6 @@
 
     export default {
         name: 'homepage',
-
-        mixins: [dataLoader(data)],
 
         components: {
             Home,
@@ -33,5 +28,16 @@
 <style lang="scss" scoped>
     .page {
         height: 100vh;
+        width: calc(100vw - #{$nav-width});
+        max-width: 1700px;
+        margin-left: $nav-width;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &.mobile {
+            margin-left: $nav-width-mobile;
+            width: calc(100vw - #{$nav-width-mobile});
+        }
     }
 </style>

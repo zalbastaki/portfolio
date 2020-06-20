@@ -7,7 +7,6 @@
         :target="target"
         :rel="rel"
         class="button"
-        :class="design"
         :style="{
             width,
             height,
@@ -25,7 +24,10 @@
         props: {
             type: {
                 type: String,
-                required: true,
+                required: false,
+                default() {
+                    return 'button';
+                },
             },
 
             buttonType: {
@@ -68,19 +70,11 @@
                 },
             },
 
-            design: {
-                type: String,
-                required: false,
-                default() {
-                    return 'primary';
-                },
-            },
-
             width: {
                 type: String,
                 required: false,
                 default() {
-                    return '228px';
+                    return '170px';
                 },
             },
 
@@ -88,7 +82,7 @@
                 type: String,
                 required: false,
                 default() {
-                    return '57px';
+                    return '50px';
                 },
             },
         },
@@ -100,36 +94,20 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 20;
-        font-weight: bold;
-        color: #fff;
-        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+        font-size: 20px;
+        font-family: $primary-font;
+        color: $tertiary-color;
         border: 0;
         text-decoration: none;
         cursor: pointer;
+        background: $primary-color;
 
-        &.primary {
-            background: blue;
-
-            &:hover {
-                background: darken(blue, 5%);
-            }
-
-            &:focus {
-                outline: 3px solid rgba(blue, 0.3);
-            }
+        &:hover {
+            background: darken($primary-color, 5%);
         }
 
-        &.secondary {
-            background: purple;
-
-            &:hover {
-                background: darken(purple, 5%);
-            }
-
-            &:focus {
-                outline: 3px solid rgba(purple, 0.3);
-            }
+        &:focus {
+            outline: 3px solid rgba($primary-color, 0.3);
         }
     }
 </style>

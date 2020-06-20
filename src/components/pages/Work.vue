@@ -3,15 +3,13 @@
 </template>
 
 <script>
+    import dataLoader from '../../mixins/dataLoader';
+    import data from '../../content/work.md';
+
     export default {
         name: 'work',
 
-        props: {
-            data: {
-                type: Object,
-                required: true,
-            },
-        },
+        mixins: [dataLoader(data)],
     };
 </script>
 
