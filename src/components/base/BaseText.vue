@@ -21,12 +21,15 @@
 </script>
 
 <style lang="scss" scoped>
+    .text {
+        margin: 0;
+    }
+
     .h1 {
         font-family: $heading-font;
         font-weight: 300;
         font-size: 100px;
         color: $primary-color;
-        margin: 10px 0;
         line-height: 1;
 
         &.tablet {
@@ -37,10 +40,20 @@
     .h2 {
         font-weight: 300;
         font-size: 35px;
-        margin: 0;
 
         &.tablet {
             font-size: 28px;
         }
+    }
+
+    .h3 {
+        font-family: $heading-font;
+        font-weight: 300;
+        font-size: 50px;
+        color: $primary-color;
+    }
+
+    .p {
+        line-height: 1.5;
     }
 </style>

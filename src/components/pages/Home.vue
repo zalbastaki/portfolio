@@ -51,8 +51,12 @@
         }
 
         .text-wrapper {
-            width: calc(60% - 300px);
-            margin: 0 150px;
+            width: 55%;
+            padding: 0 7.5%;
+
+            .h1 {
+                margin: 10px 0;
+            }
 
             .button {
                 margin-top: 100px;
@@ -80,13 +84,6 @@
                 position: absolute;
                 background: $tertiary-color;
                 left: 50px;
-            }
-        }
-
-        &.tablet {
-            .text-wrapper {
-                width: calc(60% - 160px);
-                margin: 0 80px;
             }
         }
     }
