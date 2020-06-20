@@ -5,7 +5,12 @@
 
             <base-text type="p" v-html="makeHtml(data.content)" />
 
-            <base-button @click="goto('contact')">
+            <base-button
+                type="a"
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener"
+            >
                 View Resume
             </base-button>
         </div>
