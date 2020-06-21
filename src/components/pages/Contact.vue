@@ -1,5 +1,6 @@
 <template>
     <div id="contact">
+        <div class="background" />
         <div class="text-wrapper">
             <base-text type="h3">{{ data.title }}</base-text>
             <form
@@ -52,9 +53,18 @@
 
 <style lang="scss" scoped>
     #contact {
-        background: $tertiary-color;
         flex-direction: row;
         align-items: center;
+        position: relative;
+
+        .background {
+            width: 100vw;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: $tertiary-color;
+        }
 
         .text-wrapper,
         .image-wrapper {
@@ -62,6 +72,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            z-index: 1;
         }
 
         .text-wrapper {
