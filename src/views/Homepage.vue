@@ -35,7 +35,6 @@
 
 <style lang="scss" scoped>
     #homepage {
-        position: relative;
         overflow: hidden;
 
         .opening-tags,

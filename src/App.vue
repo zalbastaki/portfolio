@@ -33,5 +33,6 @@
         background-color: $background-color;
         font-family: $primary-font;
         color: $secondary-color;
+        position: relative;
     }
 </style>
