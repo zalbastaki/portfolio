@@ -82,7 +82,7 @@
             .image-bg {
                 max-height: 750px;
                 height: 80%;
-                width: 75%;
+                width: 80%;
                 position: absolute;
                 background: $tertiary-color;
                 left: 50px;
