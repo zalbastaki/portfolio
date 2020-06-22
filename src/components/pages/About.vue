@@ -1,6 +1,6 @@
 <template>
-    <div id="about">
-        <div class="text-wrapper">
+    <base-section name="about">
+        <template v-slot:left>
             <base-text type="h3">{{ data.title }}</base-text>
 
             <base-text type="p" v-html="makeHtml(data.content)" />
@@ -13,9 +13,9 @@
             >
                 View Resume
             </base-button>
-        </div>
+        </template>
 
-        <div class="skills-wrapper">
+        <template v-slot:right>
             <div />
             <div
                 v-for="(skill, index) in data.skills"
@@ -29,8 +29,8 @@
                 {{ skill.name }}
             </div>
             <div />
-        </div>
-    </div>
+        </template>
+    </base-section>
 </template>
 
 <script>
@@ -58,22 +58,9 @@
     };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     #about {
-        flex-direction: row;
-        align-items: center;
-
-        .text-wrapper,
-        .skills-wrapper {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .text-wrapper {
-            width: 55%;
-            padding: 0 7.5%;
+        .left {
             background: $tertiary-color;
 
             .p {
@@ -85,8 +72,7 @@
             }
         }
 
-        .skills-wrapper {
-            width: 40%;
+        .right {
             justify-content: space-evenly;
 
             .skill {

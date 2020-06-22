@@ -1,60 +1,34 @@
 <template>
-    <div id="contact">
-        <div class="background" />
-        <div class="text-wrapper">
+    <base-section name="contact">
+        <div slot="other" class="background" />
+        <template v-slot:left>
             <base-text type="h3">{{ data.title }}</base-text>
-            <form
-                name="contact"
-                method="post"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
-            >
-                <input type="hidden" name="form-name" value="contact" />
-                <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="name"
-                    aria-label="name"
-                />
-                <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="email"
-                    aria-label="email"
-                />
-                <textarea
-                    name="message"
-                    id="message"
-                    placeholder="message"
-                    aria-label="message"
-                />
-                <base-button button-type="submit">
-                    Send
-                </base-button>
-            </form>
-        </div>
+            <contact-form />
+        </template>
 
-        <div class="image-wrapper"></div>
-    </div>
+        <template v-slot:right></template>
+    </base-section>
 </template>
 
 <script>
     import dataLoader from '../../mixins/dataLoader';
     import data from '../../content/contact.md';
 
+    import ContactForm from '../ContactForm';
+
     export default {
         name: 'contact',
 
         mixins: [dataLoader(data)],
+
+        components: {
+            ContactForm,
+        },
     };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     #contact {
-        flex-direction: row;
-        align-items: center;
         position: relative;
 
         .background {
@@ -66,61 +40,17 @@
             background: $tertiary-color;
         }
 
-        .text-wrapper,
-        .image-wrapper {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        .left,
+        .right {
             z-index: 1;
         }
 
-        .text-wrapper {
-            width: 55%;
-            padding: 0 7.5%;
+        .left {
+            z-index: 1;
 
             .h3 {
                 margin-bottom: 30px;
             }
-
-            form {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-
-                input,
-                textarea {
-                    display: block;
-                    width: calc(100% - 40px);
-                    border: 0;
-                    padding: 15px 20px;
-                    margin-bottom: 30px;
-                    font-size: 16px;
-
-                    &::placeholder {
-                        text-transform: capitalize;
-                        font-family: $primary-font;
-                        color: rgba($secondary-color, 0.4);
-                    }
-
-                    &:focus {
-                        outline: 3px solid rgba($primary-color, 0.3);
-                    }
-                }
-
-                textarea {
-                    resize: none;
-                    height: 20vh;
-                }
-
-                .button {
-                    align-self: flex-end;
-                }
-            }
-        }
-
-        .image-wrapper {
-            width: 40%;
         }
     }
 </style>

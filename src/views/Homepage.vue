@@ -1,9 +1,17 @@
 <template>
-    <div>
-        <home class="page" :class="$mq" />
-        <about class="page" :class="$mq" />
-        <work class="page" :class="$mq" />
-        <contact class="page" :class="$mq" />
+    <div id="homepage">
+        <div class="opening-tags" :class="$mq">
+            <base-text type="tag">&lt;html&gt;</base-text>
+            <base-text type="tag" class="body-tag">&lt;body&gt;</base-text>
+        </div>
+        <home />
+        <about />
+        <work />
+        <contact />
+        <div class="closing-tags" :class="$mq">
+            <base-text type="tag" class="body-tag">&lt;/body&gt;</base-text>
+            <base-text type="tag">&lt;/html&gt;</base-text>
+        </div>
     </div>
 </template>
 
@@ -26,18 +34,30 @@
 </script>
 
 <style lang="scss" scoped>
-    .page {
-        height: 100vh;
-        width: calc(100vw - #{$nav-width});
-        max-width: 1700px;
-        margin-left: $nav-width;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    #homepage {
+        position: relative;
+        overflow: hidden;
 
-        &.mobile {
-            margin-left: $nav-width-mobile;
-            width: calc(100vw - #{$nav-width-mobile});
+        .opening-tags,
+        .closing-tags {
+            position: absolute;
+            left: $nav-width + 20px;
+
+            &.mobile {
+                left: $nav-width-mobile + 20px;
+            }
+
+            .body-tag {
+                margin-left: 20px;
+            }
+        }
+
+        .opening-tags {
+            top: 20px;
+        }
+
+        .closing-tags {
+            bottom: 20px;
         }
     }
 </style>

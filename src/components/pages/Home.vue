@@ -1,22 +1,25 @@
 <template>
-    <div id="home">
-        <div class="text-wrapper">
+    <base-section name="home">
+        <template v-slot:left>
             <base-text type="h1">{{ data.title }}</base-text>
             <base-text type="h2">{{ data.subtitle }}</base-text>
 
             <base-button @click="goto('contact')">
                 Let's Talk!
             </base-button>
-        </div>
+        </template>
 
-        <div class="image-wrapper">
+        <template v-slot:right>
             <div
                 class="image"
                 :style="{ backgroundImage: `url(${data.image})` }"
-            />
+            >
+                <base-text type="tag" class="opening">&lt;img&gt;</base-text>
+                <base-text type="tag" class="closing">&lt;/img&gt;</base-text>
+            </div>
             <div class="image-bg" />
-        </div>
-    </div>
+        </template>
+    </base-section>
 </template>
 
 <script>
@@ -37,25 +40,11 @@
     };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     #home {
-        flex-direction: row;
-        align-items: center;
-
-        .text-wrapper,
-        .image-wrapper {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .text-wrapper {
-            width: 55%;
-            padding: 0 7.5%;
-
+        .left {
             .h1 {
-                margin: 10px 0;
+                margin-bottom: 10px;
             }
 
             .button {
@@ -63,8 +52,7 @@
             }
         }
 
-        .image-wrapper {
-            width: 40%;
+        .right {
             position: relative;
 
             .image {
@@ -75,6 +63,20 @@
                 background-repeat: no-repeat;
                 background-position: center;
                 z-index: 1;
+                position: relative;
+
+                .tag {
+                    position: absolute;
+                    margin: 0 10px;
+
+                    &.opening {
+                        top: -25px;
+                    }
+
+                    &.closing {
+                        bottom: -25px;
+                    }
+                }
             }
 
             .image-bg {
